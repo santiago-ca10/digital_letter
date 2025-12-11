@@ -1,0 +1,87 @@
+body {
+    background: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Sobre */
+.sobre {
+    width: 300px;
+    height: 220px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Cuerpo del sobre */
+.cuerpo {
+    width: 100%;
+    height: 150px;
+    background: #e19a3f;
+    border: 4px solid #532a1b;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* Tapa triangular */
+.tapa {
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 110px solid #f2b460;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform-origin: top;
+    transition: transform 0.7s ease;
+    z-index: 3;
+}
+
+/* Corazón en el centro */
+.corazon {
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    color: #ff4c77;
+    z-index: 4;
+    transition: opacity 0.5s ease;
+}
+
+/* Carta interna */
+.carta {
+    width: 85%;
+    height: 140px;
+    background: white;
+    border-radius: 10px;
+    padding: 14px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 80px);
+    opacity: 0;
+    transition: all 0.7s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 0;
+}
+
+/* Estado abierto */
+.sobre.abierto .tapa {
+    transform: rotateX(160deg);
+}
+
+.sobre.abierto .corazon {
+    opacity: 0;
+}
+
+.sobre.abierto .carta {
+    transform: translate(-50%, -5px);
+    opacity: 1;
+}
