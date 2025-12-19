@@ -1,3 +1,6 @@
-document.getElementById("sobre").addEventListener("click", () => {
-    document.getElementById("sobre").classList.toggle("abierto");
+const envelope = document.getElementById("envelope");
+const heart = document.getElementById("heart");
+
+heart.addEventListener("click", () => {
+  envelope.classList.add("open");
 });
