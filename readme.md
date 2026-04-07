@@ -1,6 +1,6 @@
 # 💌 Interactive Envelope & Message System
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-brightgreen)](https://TU_USUARIO.github.io/TU_REPO/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-brightgreen)]([https://TU_USUARIO.github.io/TU_REPO/](https://santiago-ca10.github.io/digital_letter/))
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Un componente web interactivo y elegante que simula un sobre físico con animaciones fluidas en 3D. Desarrollado con un enfoque en **UI/UX limpia**, este proyecto demuestra el manejo de estados en el DOM, animaciones SVG complejas y diseño responsivo.
