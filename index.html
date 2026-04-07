@@ -3,55 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Interactivo</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Un mensaje especial 💌</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-        <div class="envelope-wrapper" id="envelope">
-            
-            <div class="envelope-back"></div>
+    <div class="bg-cyan-solid">
+        
+        <div id="video-call-overlay" class="hidden">
+            <div class="call-content">
+                <div class="avatar-pulse">👤</div>
+                <h2>Iniciando videollamada...</h2>
+                <p>Conectando con cámara frontal...</p>
+                <div class="call-icons">
+                    <span class="icon-red">📞</span>
+                    <span class="icon-green">🎥</span>
+                </div>
+            </div>
+        </div>
 
-            <div class="card" id="card">
-                <span class="card-text">FEA XD</span>
-                <div class="gift-icon">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                        <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                        <rect x="2" y="7" width="20" height="5"></rect>
-                        <line x1="12" y1="22" x2="12" y2="7"></line>
-                        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+        <div class="container">
+            <div class="envelope-wrapper" id="envelope">
+                
+                <div class="envelope-back"></div>
+
+                <div class="card" id="card">
+                    <span class="card-text">¡SORPRESA! 🎁</span>
+                    <button class="gift-button" id="btn-gift">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                            <rect x="2" y="7" width="20" height="5"></rect>
+                            <line x1="12" y1="22" x2="12" y2="7"></line>
+                            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                        </svg>
+                        <span>ABRIR REGALO</span>
+                    </button>
+                </div>
+
+                <svg class="envelope-shapes" viewBox="0 0 500 350" preserveAspectRatio="none">
+                    <path d="M 0 0 L 250 175 L 0 350 Z" fill="#fde047" stroke="black" stroke-width="3" />
+                    <path d="M 500 0 L 250 175 L 500 350 Z" fill="#fde047" stroke="black" stroke-width="3" />
+                    <path d="M 0 350 L 250 175 L 500 350 Z" fill="#fde047" stroke="black" stroke-width="3" />
+                </svg>
+
+                <div class="envelope-flap" id="flap">
+                    <svg width="100%" height="100%" viewBox="0 0 500 175" preserveAspectRatio="none">
+                        <path d="M 0 0 L 250 175 L 500 0 Z" fill="#fde047" stroke="black" stroke-width="3" />
+                    </svg>
+                </div>
+
+                <div class="star-container">
+                    <svg width="70" height="70" viewBox="0 0 24 24" fill="#fef08a" stroke="black" stroke-width="1.5">
+                        <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.869 1.4-8.168L.132 9.21l8.2-1.192z" />
                     </svg>
                 </div>
             </div>
 
-            <svg class="envelope-sides" viewBox="0 0 400 300">
-                <path d="M 0 0 L 200 150 L 0 300 Z" fill="#fde047" stroke="black" stroke-width="3" />
-                <path d="M 400 0 L 200 150 L 400 300 Z" fill="#fde047" stroke="black" stroke-width="3" />
-            </svg>
-
-            <svg class="envelope-bottom" viewBox="0 0 400 300">
-                <path d="M 0 300 L 200 150 L 400 300 Z" fill="#fde047" stroke="black" stroke-width="3" />
-            </svg>
-
-            <div class="envelope-flap" id="flap">
-                <svg width="400" height="150" viewBox="0 0 400 150">
-                    <path d="M 0 0 L 200 150 L 400 0 Z" fill="#fde047" stroke="black" stroke-width="3" />
-                </svg>
-            </div>
-
-            <div class="star-container">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="#fef08a" stroke="black" stroke-width="1.5">
-                    <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.869 1.4-8.168L.132 9.21l8.2-1.192z" />
-                </svg>
-            </div>
+            <p class="instruction" id="status-text">Toca el sobre, hay algo para ti...</p>
         </div>
-
-        <p class="instruction" id="status-text">Haz clic para abrir el sobre</p>
     </div>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
