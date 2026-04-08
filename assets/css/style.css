@@ -8,8 +8,9 @@
 html, body {
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Evita que se mueva la pantalla */
-    background-color: #00bcd4; /* Fondo cian directo al body */
+    overflow-x: hidden; 
+    overflow-y: auto;
+    background-color: #00bcd4; 
 }
 
 /* CONTENEDOR PRINCIPAL */
@@ -27,22 +28,22 @@ html, body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%); /* Ajustado para que el sobre suba un poco menos y se vea centrado */
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
     width: 100%;
+    padding: 0 20px;
 }
 
 /* SOBRE (Tamaño de referencia) */
 .envelope-wrapper {
     position: relative;
-    width: 500px;
-    height: 350px;
-    cursor: pointer;
-    user-select: none;
-    transition: transform 0.4s ease;
+    width: 90vw;
+    max-width: 500px;
+    aspect-ratio: 500 / 350; 
+    perspective: 1000px;
 }
 
 /* Si quieres que baje un poco al abrirse para compensar la carta que sube */
@@ -55,15 +56,16 @@ html, body {
     inset: 0;
     background-color: #fde047;
     border: 4px solid black;
+    pointer-events: none;
 }
 
 /* CARTA */
 .card {
     position: absolute;
     left: 5%;
-    top: 20%;
+    top: 35%;
     width: 90%;
-    height: 220px;
+    height: 90%;
     background-color: white;
     border: 4px solid black;
     display: flex;
@@ -72,13 +74,15 @@ html, body {
     justify-content: center;
     gap: 20px;
     transition: all 0.6s ease-in-out;
-    z-index: 10;
+    z-index: 15;
     opacity: 0;
+    pointer-events: none;
+    transform: translateY(10%);
 }
 
 .card-text {
     font-family: 'Itim', cursive;
-    font-size: 34px;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
     font-weight: bold;
     color: black;
 }
@@ -96,6 +100,8 @@ html, body {
     cursor: pointer;
     font-weight: bold;
     animation: shake 6s infinite;
+    z-index: 60;
+    pointer-events: auto !important;
 }
 
 @keyframes shake {
@@ -120,7 +126,7 @@ html, body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 175px;
+    height: 50%;
     transform-origin: top;
     transition: all 0.6s ease-in-out;
     z-index: 30;
@@ -128,16 +134,18 @@ html, body {
 
 .star-container {
     position: absolute;
-    top: 175px;
-    left: 250px;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     z-index: 40;
 }
 
 /* ESTADOS ABIERTO */
 .envelope-wrapper.open .card {
-    transform: translateY(-200px);
+    z-index: 100;
+    transform: translateY(-90%);
     opacity: 1;
+    pointer-events: auto;
 }
 
 .envelope-wrapper.open .envelope-flap {
@@ -181,4 +189,77 @@ html, body {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        gap: 20px;
+    }
+
+    .envelope-wrapper {
+        width: 85vw;
+        max-width: 400px;
+    }
+
+    .card {
+        top: 16%;
+        height: 54%;
+        gap: 14px;
+    }
+
+    .gift-button {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+
+    .card-text {
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+    }
+
+    .instruction {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        gap: 15px;
+    }
+
+    .envelope-wrapper {
+        width: 90vw;
+        max-width: 320px;
+    }
+
+    .card {
+        top: 15%;
+        height: 56%;
+        gap: 12px;
+        left: 3%;
+        width: 94%;
+    }
+
+    .gift-button {
+        padding: 9px 15px;
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+
+    .gift-button svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .card-text {
+        font-size: clamp(1.2rem, 4.5vw, 1.6rem);
+        line-height: 1.3;
+    }
+
+    .instruction {
+        font-size: 14px;
+    }
+
+    .envelope-back {
+        border: 3px solid black;
+    }
 }

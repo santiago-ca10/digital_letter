@@ -4,12 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnGift = document.getElementById("btn-gift");
     const callOverlay = document.getElementById("video-call-overlay");
 
-    // REEMPLAZA TU USUARIO AQUÍ
-    const usuarioIG = "x_.santiago._vi"; 
+    const usuarioIG = "x_.santiago._vi"; // Cambia esto por tu usuario de Instagram
 
-    // 1. Lógica para abrir y cerrar el sobre (solo en clics directos)
+    // 1. Lógica para abrir y cerrar el sobre (solo en clics fuera de la carta)
     envelope.addEventListener("click", (e) => {
-        if (e.target === envelope || e.target.closest(".envelope-wrapper") === envelope && !e.target.closest(".card")) {
+        if (!e.target.closest(".card")) {
             envelope.classList.toggle("open");
 
             if (envelope.classList.contains("open")) {
